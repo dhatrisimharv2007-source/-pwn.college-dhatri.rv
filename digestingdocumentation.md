@@ -22,7 +22,7 @@ pwn.college{stktjhllpwx9NTJIliQqxCBO97N.QX1ITO0wiMxIzNzEzW}
 ## my solve:
 hacker@man~learning-complex-usage:~$ /challenge/challenge --printfile /flag
 Correct argument! Here is the /flag file:
-pwn.college{stktjhllpwx9NTJIliQqxCBO97N.QX1ITO0wiMxIzNzEzW}
+pwn.college{stktjhllpwx9NTJIliQqxCBO97N.QX1ITO0wiMxIzNzEzW}a
 ## new learnings:
 1. how to print the contents of a file
 2. learnt that arguments can have arguments of their own.
@@ -123,7 +123,7 @@ pwn.college{gIS91C2-eNiKOF9I1pIIh4Ja5bj.QX0ETO0wiMxIzNzEzW}
 ## new learning:
 1. Some commands, rather than being programs with man pages and help options, are built into the shell itself. These are called builtins. Builtins are invoked just like commands, but the shell handles them internally instead of launching other programs
 ## references:
-pwn.college explanation of the challenges and refernce videoe
+pwn.college explanation of the challenges and refernce videoes
 
 
 
