@@ -33,5 +33,10 @@ pwn.college explanation of the challenges and refernce videoes
 ## challenge 3-reading manuals
 This level introduces the man command. man is short for manual, and will display (if available) the manual of the command you pass as an argument
 ## flag:
+ pwn.college{c3iLsrING6l9zthvWfN2hCbJPsW.QX0EDO0wiMxIzNzEzW}
+ ## my solve:
+```hacker@man~reading-manuals:~$ man challenge
+hacker@man~reading-manuals:~$ /challenge/challenge --cisrlz 369
+Correct usage! Your flag: pwn.college{c3iLsrING6l9zthvWfN2hCbJPsW.QX0EDO0wiMxIzNzEzW}
 
 
