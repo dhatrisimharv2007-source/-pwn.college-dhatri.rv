@@ -35,8 +35,48 @@ This level introduces the man command. man is short for manual, and will display
 ## flag:
  pwn.college{c3iLsrING6l9zthvWfN2hCbJPsW.QX0EDO0wiMxIzNzEzW}
  ## my solve:
-```hacker@man~reading-manuals:~$ man challenge
+hacker@man~reading-manuals:~$ man challenge
 hacker@man~reading-manuals:~$ /challenge/challenge --cisrlz 369
 Correct usage! Your flag: pwn.college{c3iLsrING6l9zthvWfN2hCbJPsW.QX0EDO0wiMxIzNzEzW}
+## new learning:
+1.man command stands for manual
+2.it opens the entire manual page for a given command
+3.syntax man command.
+4.pressing q will take you back to the terminal page exiting the manual page
+## references:
+pwn.college explanation of the challenges and refernce videoes
+
+## challenge 4-searching manuals
+You can scroll man pages with the arrow keys (and PgUp/PgDn) and search with /. After searching, you can hit n to go to the next result and N to go to the previous result. Instead of /, you can use ? to search backwards
+## flag:
+pwn.college{EJ_q83y8Dfj5EkQe6wh-iz0tVzp.QX1EDO0wiMxIzNzEzW}
+## my solve:
+hacker@man~searching-manuals:~$ man challenge
+hacker@man~searching-manuals:~$ /challenge/challenge --kwcvpp
+Initializing...
+Correct usage! Your flag: pwn.college{EJ_q83y8Dfj5EkQe6wh-iz0tVzp.QX1EDO0wiMxIzNzEzW}
+## new learning
+1.learnt how to search the man page using / sign
+2.learnt how to search the man page backwards using ?
+## references:
+pwn.college explanation of the challenges and refernce videoes
+
+## challenge 5-searching for manuals
+This level is tricky: it hides the manpage for the challenge by randomizing its name. Luckily, all of the manpages are gathered in a searchable database, so you'll be able to search the man page database to find the hidden challenge man page! To figure out how to search for the right manpage, read the man page manpage by doing: man man!
+## flag:
+
+## my solve:
+
+## new learning:
+
+## references:
+pwn.college explanation of the challenges and refernce videoes
+
+## challenge 6-helpful programs
+
+
+
+
+
 
 
