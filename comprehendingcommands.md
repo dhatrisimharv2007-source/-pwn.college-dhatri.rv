@@ -2,8 +2,8 @@ challenge 1
 ## flag:
 pwn.college{w9PScfIhfJ9MQLdtDWIytdrtjlG.QXxcTN0wiMxIzNzEzW}
 ## my solve:
-hacker@commands~cat-not-the-pet-but-the-command:~$ cat flag
-pwn.college{w9PScfIhfJ9MQLdtDWIytdrtjlG.QXxcTN0wiMxIzNzEzW}
+'''hacker@commands~cat-not-the-pet-but-the-command:~$ cat flag
+pwn.college{w9PScfIhfJ9MQLdtDWIytdrtjlG.QXxcTN0wiMxIzNzEzW}'''
 
 challenge 2
 ## flag:
