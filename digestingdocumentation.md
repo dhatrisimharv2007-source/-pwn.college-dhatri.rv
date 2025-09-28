@@ -64,15 +64,69 @@ pwn.college explanation of the challenges and refernce videoes
 ## challenge 5-searching for manuals
 This level is tricky: it hides the manpage for the challenge by randomizing its name. Luckily, all of the manpages are gathered in a searchable database, so you'll be able to search the man page database to find the hidden challenge man page! To figure out how to search for the right manpage, read the man page manpage by doing: man man!
 ## flag:
-
+pwn.college{EwR82mMR7GiIwJ4x98QLpmwmp7_.QX2EDO0wiMxIzNzEzW}
 ## my solve:
-
+hacker@man~searching-for-manuals:~$ man man
+hacker@man~searching-for-manuals:~$ man -k challenge
+wmiwxpmwmp (1)       - print the flag!
+hacker@man~searching-for-manuals:~$ man wmiwxpmwmp
+hacker@man~searching-for-manuals:~$ /challenge/challenge --wmiwxp 827
+Correct usage! Your flag: pwn.college{EwR82mMR7GiIwJ4x98QLpmwmp7_.QX2EDO0wiMxIzNzEzW}
 ## new learning:
-
+1.
 ## references:
 pwn.college explanation of the challenges and refernce videoes
 
 ## challenge 6-helpful programs
+Some programs don't have a man page, but might tell you how to run them if invoked with a special argument. Usually, this argument is --help, but it can often be -h or, in rare cases, -?, help, or other esoteric values like /? (though that latter is more frequently encountered on Windows).
+## flag
+ pwn.college{M6tLhGfp3B97noAgiYYM_2y0wDX.QX3IDO0wiMxIzNzEzW}
+ ## my solve
+ hacker@man~helpful-programs:~$ /challenge/challenge --help
+usage: a challenge to make you ask for help [-h] [--fortune] [-v] [-g GIVE_THE_FLAG] [-p]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --fortune             read your fortune
+  -v, --version         get the version number
+  -g GIVE_THE_FLAG, --give-the-flag GIVE_THE_FLAG
+                        get the flag, if given the correct value
+  -p, --print-value     print the value that will cause the -g option to give you the flag
+hacker@man~helpful-programs:~$ /challenge/challenge -p
+The secret value is: 639
+hacker@man~helpful-programs:~$ /challenge/challenge -g 639
+Correct usage! Your flag: pwn.college{M6tLhGfp3B97noAgiYYM_2y0wDX.QX3IDO0wiMxIzNzEzW}
+## new learning
+Some programs don't have a man page, but might tell you how to run them if invoked with a special argument. Usually, this argument is --help, but it can often be -h or, in rare cases, -?, help, or other esoteric values like /?
+## references:
+pwn.college explanation of the challenges and refernce videoe
+
+challenge 7-help for bulletins
+Some commands, rather than being programs with man pages and help options, are built into the shell itself. These are called builtins. Builtins are invoked just like commands, but the shell handles them internally instead of launching other programs. You can get a list of shell builtins by running the builtin help
+## flag:
+pwn.college{gIS91C2-eNiKOF9I1pIIh4Ja5bj.QX0ETO0wiMxIzNzEzW}
+## my solve:
+hacker@man~help-for-builtins:~$ help challenge
+challenge: challenge [--fortune] [--version] [--secret SECRET]
+    This builtin command will read you the flag, given the right arguments!
+
+    Options:
+      --fortune         display a fortune
+      --version         display the version
+      --secret VALUE    prints the flag, if VALUE is correct
+
+    You must be sure to provide the right value to --secret. That value
+    is "gIS91C2-".
+hacker@man~help-for-builtins:~$ challenge --secret gIS91C2-
+Correct! Here is your flag!
+pwn.college{gIS91C2-eNiKOF9I1pIIh4Ja5bj.QX0ETO0wiMxIzNzEzW}
+## new learning:
+1. Some commands, rather than being programs with man pages and help options, are built into the shell itself. These are called builtins. Builtins are invoked just like commands, but the shell handles them internally instead of launching other programs
+## references:
+pwn.college explanation of the challenges and refernce videoe
+
+
+
 
 
 
