@@ -132,10 +132,57 @@ pwn.college explanation and its refernce videos
 
 ## challenge 8-tab completion
 
-using * to shorten what must be typed on the commandline can lead to mistakes. Your glob might expand to unintended files, and you might not spot it until the rm command is already running!
+This challenge has copied the flag into /challenge/pwncollege, and you can freely cat that file. But you can't type the filename: we used some serious trickery to make sure that you must tab-complete it.
 
 ## flag:
+pwn.college{g9hnjMQZAMUsX682rlVmxmQ38tE.0VN0EzNxwiMxIzNzEzW}
+
+## mysolve:
+command:cat /challenge/pwn 
+[hit tab]
+pwn.college{g9hnjMQZAMUsX682rlVmxmQ38tE.0VN0EzNxwiMxIzNzEzW}
+
+## new learning:
+1.Press Tab key to automatically complete partial filenames
+2.Reduces typing errors and increases command accuracy
+
+## references:
+pwn.college explanation and its refernce videos
 
 
+## challenge 9-multiple options for tab completion 
 
+What happens varies based on the specific shell and its options. By default bash will auto-expand until the first point when there are multiple options (in this case, fl). When you hit tab a second time, it'll print out those options. Other shells and configurations, instead, will cycle through the options.
+
+## flag:
+pwn.college{EuRO0kGjs1Mq_XB0Ev5AwkP3AGt.0lN0EzNxwiMxIzNzEzW}
+
+## my solve:
+hacker@globbing~multiple-options-for-tab-completion:~$ /challenge/files/pwn
+hacker@globbing~multiple-options-for-tab-completion:~$ cat /challenge/files/pwncollege-flag
+pwn.college{EuRO0kGjs1Mq_XB0Ev5AwkP3AGt.0lN0EzNxwiMxIzNzEzW}
+
+## new learning:
+1. click on Tab twice to see all available options when completion stops
+
+## references:
+pwn.college explanation and its refernce videos
+
+## challenge 10-tab completion on demands
+Tab completion is for more than files! You can also tab-complete commands. This level has a command that starts with pwncollege, and it'll give you the flag. Type pwncollege and hit the tab key to auto-complete it!
+
+## flag
+pwn.college{g9hnjMQZAMUsX682rlVmxmQ38tE.0VN0EzNxwiMxIzNzEzW}
+
+## my solve:
+hacker@globbing~tab-completion:~$ cat /challenge/pwncollege​
+pwn.college{gnauQ16Tl8uRjfKA2scKLbXViWL.0FN0EzNxwiMxIzNzEzW}
+
+## new learning:
+1.Tab completion works for commands, not just filenames
+2.Shell can complete executable names in PATH directories
+
+## references:
+
+pwn.college explanation and its refernce videos
 
