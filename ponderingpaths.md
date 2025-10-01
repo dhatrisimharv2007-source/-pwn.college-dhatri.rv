@@ -1,8 +1,37 @@
-challenge 1
+## challenge 1-the root
+You can invoke a program by providing its path on the command line. In this case, you'll be giving the exact path, starting from /, so the path would be /pwn. This style of path, one that starts with the root directory, is referred to as an "absolute path
+
+## flag:
 pwn.college{MCs9X3H86VGtOJ5_a5tVLAYq2AT.QX4cTO0wiMxIzNzEzW}
 
-challenge 2
+## mysolve:
+
+command /pwn
+pwn.college{MCs9X3H86VGtOJ5_a5tVLAYq2AT.QX4cTO0wiMxIzNzEzW}
+
+## new learning:
+1. Absolute paths start from the root directory (/) and provide the complete path to a file
+
+ ## refernces:
+ none
+ 
+   
+## challenge 2-program and absolute path
+Let's explore a slightly more complicated path! Except for in the previous level, challenges in pwn.college are in the challenge directory and the challenge directory is, in turn, right in the root directory (/). The path to the challenge directory is, thus, /challenge
+
+## flag:
+
 pwn.college{AbcxtvtqnEjk2OKnbETqqi36rqb.QX1QTN0wiMxIzNzEzW}
+
+## mysolve:
+command /challenge/run
+pwn.college{AbcxtvtqnEjk2OKnbETqqi36rqb.QX1QTN0wiMxIzNzEzW}
+
+## new learning:
+Absolute paths always begin with / to indicate they start from the root
+
+## references:
+none
 
 challenge 3
 pwn.college{QIKYLLcOB-qBlluBgRRkQS8GHMG.QX2QTN0wiMxIzNzEzW}
