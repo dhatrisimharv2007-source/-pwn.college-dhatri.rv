@@ -33,8 +33,20 @@ Absolute paths always begin with / to indicate they start from the root
 ## references:
 none
 
-challenge 3
+## challenge 3-postion thy self
+The Linux filesystem has tons of directories with tons of files. You can navigate around directories by using the cd (change directory) command and passing a path to it as an argument
+
+## flag:
 pwn.college{QIKYLLcOB-qBlluBgRRkQS8GHMG.QX2QTN0wiMxIzNzEzW}
+
+## my solve:
+command /challenge/run
+command cd /usr/include
+hacker@paths~position-thy-self:/usr/include$ /challenge/run
+pwn.college{QIKYLLcOB-qBlluBgRRkQS8GHMG.QX2QTN0wiMxIzNzEzW}
+
+## new learning:
+
 
 challenge 4
 pwn.college{EzK-nc0rYHjOLqsCX4ZoqBSknJq.QX3QTN0wiMxIzNzEzW}
