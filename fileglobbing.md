@@ -102,7 +102,39 @@ pwn.college{wDMWrga99FMl9TgqRMooC75fUBS.QX1IDO0wiMxIzNzEzW}
 
 ## new learning:
 
-1.
+1.Combines bracket notation [] with wildcard * for sophisticated patterns
+2.[cep]* matches files starting with c, e, or p followed by anything
+3.Demonstrates the power of mixing different glob types
+
+## references:
+pwn.college explanation and its refernce videos
+
+## challenge 7-exclusinary globbing
+Sometimes, you want to filter out files in a glob! Luckily, [] helps you do just this. If the first character in the brackets is a ! or (in newer versions of bash) a ^, the glob inverts, and that bracket instance matches characters that aren't listed
+
+## flag
+pwn.college{MHt09OUwmlejSo8yqIQ2MggVV0-.QX2IDO0wiMxIzNzEzW}
+
+## mysolve:
+hacker@globbing~exclusionary-globbing:~$ cd /challenge/files
+hacker@globbing~exclusionary-globbing:/challenge/files$ /challenge/run [^pwn]*
+You got it! Here is your flag!
+pwn.college{MHt09OUwmlejSo8yqIQ2MggVV0-.QX2IDO0wiMxIzNzEzW}
+
+## new learning:
+
+[^characters] or [!characters] creates negated character classes
+[^pwn]* matches files that do NOT start with p, w, or n
+Useful for excluding specific patterns from matches
+
+## reference:
+pwn.college explanation and its refernce videos
+
+## challenge 8-tab completion
+
+using * to shorten what must be typed on the commandline can lead to mistakes. Your glob might expand to unintended files, and you might not spot it until the rm command is already running!
+
+## flag:
 
 
 
