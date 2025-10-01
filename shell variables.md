@@ -105,4 +105,10 @@ pwn.college{wOJhCjYm_xyH9CFsBN5tFpXW0E_.QX4cTN0wiMxIzNzEzW}
  it represents what grouchy hackers call a "Useless Use of Cat". That is, running a whole other program just to read the file is a waste. It turns out that you can just use the powers of the shell!
 
 ## flag:
+pwn.college{EW9rnqgcvVAiff1XkWO8znB3ZKV.QXwIDO0wiMxIzNzEzW}
 
+## my solve:
+
+hacker@variables~reading-files:~$ read PWN < /challenge/read_me
+You've set the PWN variable properly! As promised, here is the flag:
+pwn.college{EW9rnqgcvVAiff1XkWO8znB3ZKV.QXwIDO0wiMxIzNzEzW}
