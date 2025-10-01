@@ -74,6 +74,7 @@ pwn.college explanation and its explanatory videoes
 pwn.college{sQRdzFRvp1kn_kaJghSBbl0jNzJ.QX3YTN0wiMxIzNzEzW}
 
 ## my solve:
+
 hacker@piping~redirecting-errors:~$ /challenge/run > myflag 2> instructions
 hacker@piping~redirecting-errors:~$ cat myflag
 
@@ -81,12 +82,14 @@ hacker@piping~redirecting-errors:~$ cat myflag
 [FLAG] pwn.college{sQRdzFRvp1kn_kaJghSBbl0jNzJ.QX3YTN0wiMxIzNzEzW}
 
 ## new learning:
+
 1.FD 0: Standard Input
 FD 1: Standard Output
 FD 2: Standard Error
 2. > means 1> that is standard output
 
 ## references:
+
 pwn.college explanation and its explanatory videoes
 
 ## challenge 5-redirecting input
@@ -109,6 +112,7 @@ You know how to run commands, how to redirect their output (e.g., >), and how to
 pwn.college{YClBw71EdrJVOuh3pygwks5hj18.QX4EDO0wiMxIzNzEzW}
 
 ## my solve:
+
 hacker@piping~grepping-stored-results:~$ /challenge/run 1> /tmp/data.txt
 hacker@piping~grepping-stored-results:~$ grep pwn. /tmp/data.txt
 pwned
@@ -124,12 +128,14 @@ pwn.college{YClBw71EdrJVOuh3pygwks5hj18.QX4EDO0wiMxIzNzEzW}
 pwn.college explanation and its explanatory videoes
 
 ## challenge 7-grepping live output
+
 It turns out that you can "cut out the middleman" and avoid the need to store results to a file, like you did in the last level. You can do this by using the | (pipe) operator. Standard output from the command to the left of the pipe will be connected to (piped into) the standard input of the command to the right of the pipe
 
 ## flag:
 pwn.college{oiSdQDqFQ7q7d4657dJHSzYReyK.QX5EDO0wiMxIzNzEzW}
 
 ## my solve:
+
 hacker@piping~grepping-live-output:~$ /challenge/run | grep pwn.
 [PASS] Success! You have satisfied all execution requirements.
 pwn.college{oiSdQDqFQ7q7d4657dJHSzYReyK.QX5EDO0wiMxIzNzEzW}
@@ -137,6 +143,7 @@ pwns
 pwning
 pwned
 ## new learning:
+
 1.it removes the middle men out and avoids the requirement to store results in the file.
 2. syntax /path | grep search element 
 
@@ -150,6 +157,7 @@ The shell has a >& operator, which redirects a file descriptor to another file d
 pwn.college{Etmd6WSRLMPTQzTTn7HgRObnMZU.QX1ATO0wiMxIzNzEzW}
 
 ## my solve:
+
 hacker@piping~grepping-errors:~$ /challenge/run 2>& 1 |grep pwn.
 pwn.college{Etmd6WSRLMPTQzTTn7HgRObnMZU.QX1ATO0wiMxIzNzEzW}
 pwning
@@ -170,6 +178,7 @@ The grep command has a very useful option: -v (invert match). While normal grep 
 pwn.college{4qw8S0vX63AJ5ekfV5iPwr8ApXZ.0FOxEzNxwiMxIzNzEzW}
 
 ## my solve:
+
 hacker@piping~filtering-with-grep-v:~$ /challenge/run | grep -v DECOY
 pwn.college{4qw8S0vX63AJ5ekfV5iPwr8ApXZ.0FOxEzNxwiMxIzNzEzW}
 
@@ -180,6 +189,107 @@ pwn.college{4qw8S0vX63AJ5ekfV5iPwr8ApXZ.0FOxEzNxwiMxIzNzEzW}
 ## references:
 pwn.college explanation and its explanatory videos
 
-## challenge 10-
+## challenge 10-duplicating piped data with tee
+
+## flag:
+pwn.college{onJ2RpEpQFgVlgkHWHvZo1sbYpF.QXxITO0wiMxIzNzEzW}
+
+## my solve:
+
+hacker@piping~duplicating-piped-data-with-tee:~$ /challenge/pwn | tee intercepted_data.txt | /challenge/college
+Processing...
+The input to 'college' does not contain the correct secret code! This code
+should be provided by the 'pwn' command. HINT: use 'tee' to intercept the
+output of 'pwn' and figure out what the code needs to be.
+hacker@piping~duplicating-piped-data-with-tee:~$ cat intercepted_data.txt
+Usage: /challenge/pwn --secret [SECRET_ARG]
+
+SECRET_ARG should be "onJ2RpEp"
+hacker@piping~duplicating-piped-data-with-tee:~$ /challenge/pwn --secret onJ2RpEp | tee intercepted_data.txt | /challenge/college
+Processing...
+WARNING: you are overwriting file intercepted_data.txt with tee's output...
+Correct! Passing secret value to /challenge/college...
+Great job! Here is your flag:
+pwn.college{onJ2RpEpQFgVlgkHWHvZo1sbYpF.QXxITO0wiMxIzNzEzW}
+
+## new learnings:
+
+1.duplicates data flowing through your pipes to any number of files provided on the command line.
+2.one to stdout, one to the pwn file, and one to the college file. 
+
+## reference:
+pwn.college explanation and its explanatory videos
+
+## challenge 11-process substitution for input
+
+
+## flag:
+pwn.college{YsDZxZSbRCK7G1c01TtNU32Au94.0lNwMDOxwiMxIzNzEzW}
+
+## mysolve:
+
+hacker@piping~process-substitution-for-input:~$ diff <(/challenge/print_decoys) <(/challenge/print_decoys_and_flag)
+73a74
+> pwn.college{YsDZxZSbRCK7G1c01TtNU32Au94.0lNwMDOxwiMxIzNzEzW}
+
+## new learning:
+1. how to check difference between two different files without the use of command diff
+2. For reading from a command (input process substitution), use <(command)
+When you write <(command), bash will run the command and hook up its output to a temporary file that it will create
+
+## references:
+
+pwn.college explanation and its explanatory videos
+
+## challenge 12- writing to multiple programs:
+Now you've learned that process substitution can make command output appear as files for reading with <(command). But you can also use process substitution for writing to commands
+
+## flag:
+pwn.college{o0fAx7p08XEFyaxstbz2laANAXn.QXwgDN1wiMxIzNzEzW}:
+
+## mysolve:
+
+hacker@piping~writing-to-multiple-programs:~$ /challenge/hack | tee >(/challenge/the) >(/challenge/planet)
+Congratulations, you have duplicated data into the input of two programs! Here
+is your flag:
+pwn.college{o0fAx7p08XEFyaxstbz2laANAXn.QXwgDN1wiMxIzNzEzW}
+
+## new learning:
+1.Now you've learned that process substitution can make command output appear as files for reading with <(command)
+tee to duplicate data to a file and a command 
+
+2.bash can make commands look like files using process substitution! For writing to a command (output process substitution), use >(command). If you write an argument of >(rev), bash will run the rev command (this command reads data from standard input, reverses its order, and writes it to standard output!), but hook up its input to a temporary named pipe file
+
+## refernce:
+
+pwn.college explanation and its explanatory videos
+
+## challenge 13-split-piping stderr and stdout
+
+## flag:
+pwn.college{QzOMQX7ydRtylkumvwhZSGMtTK8.QXxQDM2wiMxIzNzEzW}
+
+## mysolve:
+hacker@piping~split-piping-stderr-and-stdout:~$ /challenge/hack 2> >(/challenge/the) | /challenge/planet
+Congratulations, you have learned a redirection technique that even experts
+struggle with! Here is your flag:
+pwn.college{QzOMQX7ydRtylkumvwhZSGMtTK8.QXxQDM2wiMxIzNzEzW}
+
+##reference:
+pwn.college explanation and its explanatory videos
+
+##challenge 14-named pipes
+
+You've learned about pipes using |, and you've seen that process substitution creates temporary named pipes (like /dev/fd/63). You can also create your own persistent named pipes that stick around on the filesystem! These are called FIFOs, which stands for First (byte) In, First (byte) Out.
+
+## flag:
+
+## my solve:
+
+## new learning:
+
+## references:
+
+pwn.college explanation and its explanatory videos
 
 
