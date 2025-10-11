@@ -1,4 +1,4 @@
-## challenge 1-listing proccess
+## challenge 1-listing processes
  I have once again renamed /challenge/run to a random filename, and this time made it so that you cannot ls the /challenge directory! But I also launched it, so you can find it in the running process list, figure out the filename, and relaunch it directly for the flag!
 
  ## flag:
@@ -53,7 +53,7 @@ pwn.college{Ifsnx4ZyuXyw5dhMm0CK0kLv8aj.QXyQDO0wiMxIzNzEzW}
 1.kill will terminate a process in a way that gives it a chance to get its affairs in order before ceasing to exist.
 
 
-## challenge 3-interuptting proccess
+## challenge 3-interuptting processes
 
 /challenge/run will refuse to give you the flag until you interrupt
 
@@ -77,7 +77,7 @@ pwn.college{QiwgulNqcdFCDMWxQvwzWbmJaAr.QXzQDO0wiMxIzNzEzW}
 ## challenge 4-killing misbehaving proccess
 
 
-## challenge 5-suspending proccess
+## challenge 5-suspending processes
 This level's run wants to see another copy of itself running and using the same terminal. How? Use the terminal to launch it, then suspend it, then launch another copy while the first is suspended!
 
 ## flag:
@@ -116,7 +116,7 @@ pwn.college{AdKY4Mf39uUf7XYepav0ojUthMH.QX1QDO0wiMxIzNzEzW}
 ## new learning:
 1. You can suspend processes to the background with Ctrl-Z
 
-## challenge 6-resuming proccess
+## challenge 6-resuming processes
  This challenge's run needs you to suspend it, then resume it.
 
  ## flag:
@@ -139,7 +139,7 @@ pwn.college{UcAxENiixXn40Qyq-UWEG__X56L.QX2QDO0wiMxIzNzEzW}
 ## new learning:
 1.To resume processes, your shell provides the fg command
 
-## challenge 7-backgrounding proccess
+## challenge 7-backgrounding processes
 This level's run wants to see another copy of itself running, not suspended, and using the same terminal.
 
 ## flag:
@@ -190,7 +190,7 @@ pwn.college{sdOCIZtsu9XDBkurspcPCjSsStX.QX3QDO0wiMxIzNzEzW}
 ## new leaning:
 1.you can also resume processes in the background with the bg command
 
-## challenge 8-foregrounding proccess
+## challenge 8-foregrounding processes
 foregrounding proccess
 
 ## flag:
@@ -235,6 +235,54 @@ YES! Great job! I'm now running in the foreground. Hit Enter for your flag!
 
 pwn.college{sgh0Bx5b5T2A8RxvgLsrg1wDdAf.QX4QDO0wiMxIzNzEzW}
 ```
+
+## new learning:
+1. you can foreground a backgrounded process with fg just like you foreground a suspended process
+
+## challenge 9-starting background processes
+sleep is actively running in the background, not suspended. Now it's your turn to practice! Launch /challenge/run backgrounded for the flag
+
+## flag:
+pwn.college{QoY0qjI6bPuaxvOwNBSNsgb6cA0.QX5QDO0wiMxIzNzEzW}
+
+## mysolve:
+```
+hacker@processes~starting-backgrounded-processes:~$ /challenge/run &
+[1] 138
+hacker@processes~starting-backgrounded-processes:~$
+
+
+Yay, you started me in the background! Because of that, this text will probably
+overlap weirdly with the shell prompt, but you're used to that by now...
+
+Anyways! Here is your flag!
+pwn.college{QoY0qjI6bPuaxvOwNBSNsgb6cA0.QX5QDO0wiMxIzNzEzW}
+```
+
+## new learning:
+1.you don't have to suspend processes to background them: you can start them backgrounded right off the bat! It's easy; all you have to do is append a & to the command
+
+## challenge 10-process exit codes
+you must retrieve the exit code returned by /challenge/get-code and then run /challenge/submit-code with that error code as an argument
+
+## flag:
+pwn.college{YVy7o_oomgz0Woxj_4QsEqmkDuT.QX5YDO1wiMxIzNzEzW}
+
+## mysolve:
+```
+hacker@processes~process-exit-codes:~$ /challenge/get-code
+Exiting with an error code!
+hacker@processes~process-exit-codes:~$ echo $?
+239
+hacker@processes~process-exit-codes:~$ /challenge/submit-code 239
+CORRECT! Here is your flag:
+pwn.college{YVy7o_oomgz0Woxj_4QsEqmkDuT.QX5YDO1wiMxIzNzEzW}
+```
+
+## new learning:
+1.Every shell command, including every program and every builtin, exits with an exit code when it finishes running and terminates
+2.You can access the exit code of the most recently-terminated command using the special ? variable (don't forget to prepend it with $ to read its value)
+
 
   
 
