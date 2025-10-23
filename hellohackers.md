@@ -6,8 +6,9 @@ In this challenge, you will invoke your first command! When you type a command a
 pwn.college{0in84ckmHVkTOIFA1Ea9habmbFk.QX3YjM1wiMxIzNzEzW}
 
 ## mysolve:
-
-hacker@hello~intro-to-commands:~$ hello 
+```
+hacker@hello~intro-to-commands:~$ hello
+```
 
 ## new learning:
 1.how to invoke a command in termial
